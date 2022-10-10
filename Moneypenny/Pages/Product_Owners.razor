@@ -1,0 +1,42 @@
+﻿@page "/Product_Owners"
+
+@using Moneypenny.Data
+@inject GetEmployees getJSONtoArray
+
+<PageTitle>Product Owners</PageTitle>
+
+<h1 class="title">Product Owners</h1>
+
+@if (arr != null)
+{
+
+    foreach (var employee in arr)
+    {
+        if (@employee.Position.ToUpper().Equals("Product Owner".ToUpper()))
+        {
+            <div class="job-card">
+                <h4 class="card-title">@employee.Name</h4>
+                <p><span class="badge badge-@employee.Position.ToLower().Replace(" ", "-")">@employee.Position</span></p>
+
+                <p>Skills: </p>
+                <ul>
+                    @foreach (var skill in @employee.Skills.Split(","))
+                    {
+                        <li class="card-text">@skill</li>
+                    }
+                </ul>
+            </div>
+        }
+
+    }
+
+}
+
+@code {
+    private Employee[]? arr;
+
+    protected override async Task OnInitializedAsync()
+    {
+        arr = await getJSONtoArray.GetAsync();
+    }
+}

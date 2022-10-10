@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "Moneypenny/1.0.0": {
+        "runtime": {
+          "Moneypenny.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Moneypenny/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
